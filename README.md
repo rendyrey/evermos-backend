@@ -17,8 +17,8 @@ Reviews coming from buyers can be specified in 3 types.
 a large flash sale and major discounts likely and obviously attract customers to buy or just view our product more than daily basis. Therefore the quality of service will decrease due to large numbers of buyer that CS(s) have to handle.
 These are few things that will be impacted by it:
 - Customer Service become worse (chat & call responds interval). This happen because CS have to handle more customers than daily basis.
-- Packing Quality (some customers perhaps got bad packing quality and it impacted the product)
-- Shipping Time (some buyers may get items with a longer shipping time than estimated). This happen due to packages piled up full in the warehouse.
+- Packing Quality (some customers perhaps got bad packing quality and it impacted the product) - Human error side
+- Shipping Time (some buyers may get items with longer shipping time than estimated). This happen due to packages piled up full in the warehouse.
 - User Experience become worse due to large traffic and the server can't handle it well.
 - Human Error. some buyers perhaps got wrong package/item, color, incomplete items amount. This happen because of exhausted seller or others causes.
 - etc.
