@@ -50,6 +50,7 @@ The solutions:
 # Public API Endpoint
 The public api endpoint of this project can be accessed on:
 `evermos.rendyrey.com`
+but use the environment for the test I provided on `EVERMOS Environment.postman_environment.json` file. Import this file to postman environment.
 
 # How to deploy on local
 1. Clone the repository
