@@ -23,23 +23,24 @@ $router->group(
     ['middleware'=>'jwt.auth'],
     function() use ($router){
         
-        // users
-        $router->get('usersx', function(){
-            $users = \App\Models\User::all();
-            return response()->json($users);
-        });
-
+        
         $router->get('list-basket', 'ProductController@listOfBasket');
-
+        
         $router->post('add-to-basket/{productId}[/{amount}]', 'TransactionController@addToBasket');
-
+        
         $router->post('checkout','TransactionController@checkout');
-
+        
         $router->post('pay/{transactionId}[/{paymentId}]','TransactionController@pay');
-
+        
         $router->post('process-transaction/{transactionId}/{transactionStatus}','TransactionController@processTransaction');
     }
 );
+
+// users
+$router->get('list-users', function(){
+    $users = \App\Models\User::all();
+    return response()->json($users);
+});
 
 // list barang
 $router->get('list-products', 'ProductController@listOfProduct');
