@@ -32,8 +32,8 @@ But in this case I will assume it is on one platform only.
 
 This is the process of the online purchasing that generally people experience including me:
 1. Buyer choose the product
-2. Buyer do the checkout
-3. Buyer do the payment. -> this is where the inventory check have to be occur prior the payment to handle concurrent transaction.
+2. Buyer do the checkout -> this is where the inventory quantity check have to be occur.
+3. Buyer do the payment. -> also this is where the inventory quantity check have to be occur prior the payment to handle concurrent transaction.
 4. Seller accept/process/cancel the transaction. -> this is where the inventory quantity have to decrease everytime seller accept/process the transaction.
 5. Seller send the item.
 6. Buyer receive the package
