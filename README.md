@@ -69,4 +69,14 @@ or you can use `Online Store EVERMOS.postman_collection.json` file on root proje
 11. If you encounter any problems, you could try to clear cache and clear config.
 12. If you encounter any error on jwt, generate jwt secret key with `php artisan jwt:secret`
 
-
+# The business process
+1. User Login on {{host}}/auth/login
+2. User see product list on {{host}}/list-products
+3. User add product to basket (can 1 product by default or you can defined the quantity)
+4. User see the list of product on baskket (products that have been added to basket)
+5. User do the checkout
+6. User process the payment
+7. Send the package
+8. Received the package
+9. Complete the transaction
+misc: you can see list of all transactions by status (waiting payment, paid, sent, received, completed)
