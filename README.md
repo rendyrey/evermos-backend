@@ -58,14 +58,15 @@ and change the host value to `evermos.rendyrey.com`
 1. Clone the repository
 2. Install dependancy: `composer install` on the project directory
 3. Create new database on your local.
-3. Change the config for database on `.env` file. suit it with your db environment (user and pass db)
-4. Run migration with `php artisan migrate`
-5. Seed the db with `php artisan db:seed` (seed the user, product, product type tables)
-6. Generate jwt secret key with `php artisan jwt:secret`
+4. Change the config for database on `.env` file. suit it with your db environment (user and pass db)
+5. Run migration with `php artisan migrate`
+6. Seed the db with `php artisan db:seed` (seed the user, product, product type tables) 
 7. Run the server: `php -S localhost:8080 -t public`
 8. Use POSTMAN to test. Here's postman collection link: `https://www.getpostman.com/collections/3574c9d0a7bee3523f5c`
 or you can use `Online Store EVERMOS.postman_collection.json` file on root project directory.
 9. I provide the environment for test on `EVERMOS Environment.postman_environment.json` file. Import this file to postman environment.
-10. If you encounter any problems, you could try to clear cache and clear config.
+10. Almost all route need auth/token, so the first things you have to do is login, and copy the provided token to postman environment on the token key.
+11. If you encounter any problems, you could try to clear cache and clear config.
+12. If you encounter any error on jwt, generate jwt secret key with `php artisan jwt:secret`
 
 
