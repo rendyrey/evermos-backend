@@ -65,7 +65,7 @@ and change the host value to `evermos.rendyrey.com`
 8. Use POSTMAN to test. Here's postman collection link: `https://www.getpostman.com/collections/3574c9d0a7bee3523f5c`
 or you can use `Online Store EVERMOS.postman_collection.json` file on root project directory.
 9. I provide the environment for test on `EVERMOS Environment.postman_environment.json` file. Import this file to postman environment.
-10. Almost all route need auth/token, so the first things you have to do is login, and copy the provided token to postman environment on the token key.
+10. Almost all route need auth/token, so the first things you have to do is login. You can see list user on `{{host}}/list-users` to get email and copy the provided token to postman environment on the token key.
 11. If you encounter any problems, you could try to clear cache and clear config.
 12. If you encounter any error on jwt, generate jwt secret key with `php artisan jwt:secret`
 
