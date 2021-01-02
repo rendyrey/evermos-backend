@@ -1,0 +1,338 @@
+{
+	"info": {
+		"_postman_id": "7b5942da-c8ad-4989-98b6-4ce5ca82fbec",
+		"name": "Online Store EVERMOS",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Auth/Login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "email",
+							"value": "kayleigh72@example.org",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "123456",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{host}}/auth/login",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"auth",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get List of Products",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/list-products",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"list-products"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get List of  Basket",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{host}}/list-basket?token={{token}}",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"list-basket"
+					],
+					"query": [
+						{
+							"key": "token",
+							"value": "{{token}}"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add 1 to Basket",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{host}}/add-to-basket/{{productId}}?token={{token}}",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"add-to-basket",
+						"{{productId}}"
+					],
+					"query": [
+						{
+							"key": "token",
+							"value": "{{token}}"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add 5 to Basket",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{host}}/add-to-basket/{{productId}}/5?token={{token}}",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"add-to-basket",
+						"{{productId}}",
+						"5"
+					],
+					"query": [
+						{
+							"key": "token",
+							"value": "{{token}}"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Checkout",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{host}}/checkout?token={{token}}",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"checkout"
+					],
+					"query": [
+						{
+							"key": "token",
+							"value": "{{token}}"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Process Payment",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{host}}/pay/{{transactionId}}/1?token={{token}}",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"pay",
+						"{{transactionId}}",
+						"1"
+					],
+					"query": [
+						{
+							"key": "token",
+							"value": "{{token}}"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Process Sent Package",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{host}}/process-transaction/{{transactionId}}/3?token={{token}}",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"process-transaction",
+						"{{transactionId}}",
+						"3"
+					],
+					"query": [
+						{
+							"key": "token",
+							"value": "{{token}}"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Process Received Package",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{host}}/process-transaction/{{transactionId}}/4?token={{token}}",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"process-transaction",
+						"{{transactionId}}",
+						"4"
+					],
+					"query": [
+						{
+							"key": "token",
+							"value": "{{token}}"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Complete The Transaction",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{host}}/process-transaction/{{transactionId}}/5?token={{token}}",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"process-transaction",
+						"{{transactionId}}",
+						"5"
+					],
+					"query": [
+						{
+							"key": "token",
+							"value": "{{token}}"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "List of Waiting Payment Transaction",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": ""
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "List of Paid Transaction",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{host}}/list-transactions/2",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"list-transactions",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "List of Sent Transaction",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{host}}/list-transactions/3",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"list-transactions",
+						"3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "List of Received Transaction",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{host}}/list-transactions/4",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"list-transactions",
+						"4"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "List of Completed Transaction",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{host}}/list-transactions/5",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"list-transactions",
+						"5"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

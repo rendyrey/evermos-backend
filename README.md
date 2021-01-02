@@ -46,3 +46,17 @@ The solutions:
 3. Inventory decreasing have to be occurs when seller accept the transaction.
 4. Inventory check have to be occurs prior the payment. If item has zero stock, the payment could be canceled. So the buyer got informed in advanced, not after the payment.
 5. And lastly, on human side. The seller or CS has to recheck the items manually and update the quantity of product on the system regularly.
+
+
+# How to deploy on local
+1. Clone the repository
+2. Install dependancy: `composer install` on the project directory
+3. Create new database on your local.
+3. Change the config for database on `.env` file. suit it with your db environment (user and pass db)
+4. Run migration with `php artisan migrate`
+5. Seed the db with `php artisan db:seed` (seed the user, product, product type tables)
+3. Run the server: `php -S localhost:8080 -t public`
+4. Use POSTMAN to test. Here's postman collection link: `https://www.getpostman.com/collections/3574c9d0a7bee3523f5c`
+or you can use `Online Store EVERMOS.postman_collection.json` file on root project directory.
+5. I provide the environment for test on `EVERMOS Environment.postman_environment.json` file. Import this file to postman environment.
+
