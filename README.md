@@ -12,13 +12,17 @@ Reviews coming from buyers can be specified in 3 types.
 - Product Quality
 - Service Quality
 - Platform or User Experience on Using the application.
-a large flash sale and major discounts likely and obviously attract customers to buy or just view our product more than daily basis. Therefore the quality of service will decrease due to large numbers of buyer that CS(s) have to handle. These are few things that will be impacted by it:
+
+
+a large flash sale and major discounts likely and obviously attract customers to buy or just view our product more than daily basis. Therefore the quality of service will decrease due to large numbers of buyer that CS(s) have to handle.
+These are few things that will be impacted by it:
 - Customer Service become worse (chat & call responds interval). This happen because CS have to handle more customers than daily basis.
-- Packing Quality (some customers perhaps got bad packing quality and it impacted the product)
-- Shipping Time (some buyers may get items with a longer shipping time than estimated). This happen due to packages piled up full in the warehouse.
+- Packing Quality (some customers perhaps got bad packing quality and it impacted the product) - Human error side
+- Shipping Time (some buyers may get items with longer shipping time than estimated). This happen due to packages piled up full in the warehouse.
 - User Experience become worse due to large traffic and the server can't handle it well.
 - Human Error. some buyers perhaps got wrong package/item, color, incomplete items amount. This happen because of exhausted seller or others causes.
 - etc.
+So those are the causes for bad reviews during 12.12. event
 
 2. Based on your analysis, propose a solution that will prevent the incidents from occurring again.
 
@@ -29,8 +33,8 @@ But in this case I will assume it is on one platform only.
 
 This is the process of the online purchasing that generally people experience including me:
 1. Buyer choose the product
-2. Buyer do the checkout
-3. Buyer do the payment. -> this is where the inventory check have to be occur prior the payment to handle concurrent transaction.
+2. Buyer do the checkout -> this is where the inventory quantity check have to be occur.
+3. Buyer do the payment. -> also this is where the inventory quantity check have to be occur prior the payment to handle concurrent transaction.
 4. Seller accept/process/cancel the transaction. -> this is where the inventory quantity have to decrease everytime seller accept/process the transaction.
 5. Seller send the item.
 6. Buyer receive the package
