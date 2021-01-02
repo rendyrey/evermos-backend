@@ -22,6 +22,7 @@ These are few things that will be impacted by it:
 - User Experience become worse due to large traffic and the server can't handle it well.
 - Human Error. some buyers perhaps got wrong package/item, color, incomplete items amount. This happen because of exhausted seller or others causes.
 - etc.
+So those are the causes for bad reviews during 12.12. event
 
 2. Based on your analysis, propose a solution that will prevent the incidents from occurring again.
 
