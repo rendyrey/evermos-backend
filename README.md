@@ -70,8 +70,8 @@ or you can use `Online Store EVERMOS.postman_collection.json` file on root proje
 12. If you encounter any error on jwt, generate jwt secret key with `php artisan jwt:secret`
 
 # The business process
-1. User Login on {{host}}/auth/login
-2. User see product list on {{host}}/list-products
+1. User Login on `{{host}}/auth/login` (for user email you could see on `{{host}}/list-users` and all password is `123456`)
+2. User see product list on `{{host}}/list-products`
 3. User add product to basket (can 1 product by default or you can defined the quantity)
 4. User see the list of product on baskket (products that have been added to basket)
 5. User do the checkout
