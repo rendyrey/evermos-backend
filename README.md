@@ -47,6 +47,9 @@ The solutions:
 4. Inventory check have to be occurs prior the payment. If item has zero stock, the payment could be canceled. So the buyer got informed in advanced, not after the payment.
 5. And lastly, on human side. The seller or CS has to recheck the items manually and update the quantity of product on the system regularly.
 
+# Public API Endpoint
+The public api endpoint of this project can be accessed on:
+`evermos.rendyrey.com`
 
 # How to deploy on local
 1. Clone the repository
