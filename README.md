@@ -55,8 +55,11 @@ The solutions:
 3. Change the config for database on `.env` file. suit it with your db environment (user and pass db)
 4. Run migration with `php artisan migrate`
 5. Seed the db with `php artisan db:seed` (seed the user, product, product type tables)
-3. Run the server: `php -S localhost:8080 -t public`
-4. Use POSTMAN to test. Here's postman collection link: `https://www.getpostman.com/collections/3574c9d0a7bee3523f5c`
+6. Generate jwt secret key with `php artisan jwt:secret`
+7. Run the server: `php -S localhost:8080 -t public`
+8. Use POSTMAN to test. Here's postman collection link: `https://www.getpostman.com/collections/3574c9d0a7bee3523f5c`
 or you can use `Online Store EVERMOS.postman_collection.json` file on root project directory.
-5. I provide the environment for test on `EVERMOS Environment.postman_environment.json` file. Import this file to postman environment.
+9. I provide the environment for test on `EVERMOS Environment.postman_environment.json` file. Import this file to postman environment.
+10. If you encounter any problems, you could try to clear cache and clear config.
+
 
