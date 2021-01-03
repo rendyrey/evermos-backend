@@ -42,6 +42,12 @@ $router->get('list-users', function(){
     return response()->json($users);
 });
 
+// list payment
+$router->get('list-payments', function(){
+    $payments = \App\Models\Payment::all();
+    return response()->json($payments);
+});
+
 // list barang
 $router->get('list-products', 'ProductController@listOfProduct');
 // list transaction by the status

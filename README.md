@@ -33,12 +33,13 @@ But in this case I will assume it is on one platform only.
 
 This is the process of the online purchasing that generally people experience including me:
 1. Buyer choose the product
-2. Buyer do the checkout -> this is where the inventory quantity check have to be occur.
-3. Buyer do the payment. -> also this is where the inventory quantity check have to be occur prior the payment to handle concurrent transaction.
-4. Seller accept/process/cancel the transaction. -> this is where the inventory quantity have to decrease everytime seller accept/process the transaction.
-5. Seller send the item.
-6. Buyer receive the package
-7. Buyer completed the transaction.
+2. Buyer add product to basket -> this is where the quantity check with basket have to be balance.
+3. Buyer do the checkout -> this is where the inventory quantity check have to be occur.
+4. Buyer do the payment. -> this is where the inventory quantity have to decrease and recheck everytime buyer do the payment.
+5. Seller accept/process the transaction.
+6. Seller send the item.
+7. Buyer receive the package
+8. Buyer completed the transaction.
 
 The solutions:
 1. Listing of product should be shown only available/ready stock or we can use disabled to buy, hide button, or anything to prevent buyer buy the product that actually have zero stock.

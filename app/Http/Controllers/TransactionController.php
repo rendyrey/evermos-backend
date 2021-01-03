@@ -54,7 +54,7 @@ class TransactionController extends Controller
 
         // check stock/quantity of the product
         if (!$this->checkStock($productId)) {
-            return $this->response(404, "Product have zero stock");
+            return $this->response(400, "Product have zero stock");
         }
 
         try{
@@ -62,10 +62,14 @@ class TransactionController extends Controller
 
             // check if added product exists on the previous basket. 
             $checkBasket = Basket::where('product_id', $productId)->where('user_id',$user->id)->where('is_checked_out', 0)->first();
-            
+            $checkProduct = Product::findOrFail($productId);
             // if the added product exists on user's basket, the product amount is accumulated.
             if ($checkBasket) {
                 $checkBasket->amount += $amount;
+
+                if($checkBasket->amount > $checkProduct->quantity) { // checking quantity with the added product
+                    return $this->response(400, "Product has less stock than you want");
+                }
                 $checkBasket->save();
             
             } else { // if no, create new row on basket table for that productId
@@ -74,11 +78,16 @@ class TransactionController extends Controller
                 $basket->product_id = $productId;
                 $basket->amount = $amount;
                 $basket->is_checked_out = 0;
+
+                if($basket->amount > $checkProduct->quantity) { // checking quantity with the added product
+                    return $this->response(400, "Product has less stock than you want");
+                }
                 $basket->save();
             }
-    
+            
             return $this->response(201, "Product(s) successfully added to basket");
         } catch (\Exception $e) {
+
             return response()->json([
                 'code' => 500,
                 'message' => $e->getMessage()
@@ -123,6 +132,12 @@ class TransactionController extends Controller
                     $transactionDetail->transaction_id = $transaction->id;
                     $transactionDetail->product_id = $bvalue->product_id;
                     $transactionDetail->amount = $bvalue->amount;
+                    
+                    $checkProduct = Product::findOrFail($transactionDetail->product_id);
+                    if($checkProduct->quantity < $transactionDetail->amount) {
+                        DB::rollback(); // rollback the database on earlier state
+                        return $this->response(400, "Product have less stock than you want");
+                    }
                     $transactionDetail->price = (float) $bvalue->product->price;
                     $transactionDetail->total_price = (float) ($bvalue->amount * $transactionDetail->price);
                     $transactionDetail->save();
@@ -152,7 +167,7 @@ class TransactionController extends Controller
     public function pay(Request $request, $transactionId, $paymentId = 1) {
         $user = UserHelper::getUser($request->token);
         
-        DB::beginTransaction();
+        DB::beginTransaction(); // begin DB transaction to prevent failed on the middle of transaction due to product quantity
         try{
             $transaction = Transaction::where('user_id', $user->id)->where('id', $transactionId)->first();
     
@@ -166,11 +181,12 @@ class TransactionController extends Controller
 
             $transactionDetail = TransactionDetail::where('transaction_id', $transactionId)->get();
 
-            // loop to check product quantity
+            // loop to check product quantity and quantity decreasement
             foreach($transactionDetail as $ktDetail => $vtDetail) {
                 $product = Product::findOrFail($vtDetail->product_id);
-                if($product->quantity < 1) { // if quantity is zero, cancel the payment process
-                    return $this->response(400, "You can't pay this transaction. There are product(s) thas has zero quantity");
+                if($product->quantity < 1) { // if quantity is zero or not enough, cancel the payment process
+                    DB::rollback(); // rollback the quantity to earlier state, before the decreasement.
+                    return $this->response(400, "You can't pay this transaction. The stock is not enough or have 0 stock");
                 }
 
                 $product->quantity -= $vtDetail->amount; // decrease product quantity

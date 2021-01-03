@@ -6,6 +6,7 @@ use Illuminate\Database\Seeder;
 use App\Models\User;
 use App\Models\ProductType;
 use App\Models\Product;
+use App\Models\Payment;
 
 class DatabaseSeeder extends Seeder
 {
@@ -28,5 +29,9 @@ class DatabaseSeeder extends Seeder
         Product::unguard();
         $this->call(ProductsTableSeeder::class);
         Product::reguard();
+
+        Payment::unguard();
+        $this->call(PaymentsTableSeeder::class);
+        Payment::reguard();
     }
 }
