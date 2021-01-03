@@ -59,14 +59,25 @@ and change the host value to `evermos.rendyrey.com`
 1. Clone the repository
 2. Install dependancy: `composer install` on the project directory
 3. Create new database on your local.
-3. Change the config for database on `.env` file. suit it with your db environment (user and pass db)
-4. Run migration with `php artisan migrate`
-5. Seed the db with `php artisan db:seed` (seed the user, product, product type tables)
-6. Generate jwt secret key with `php artisan jwt:secret`
+4. Change the config for database on `.env` file. suit it with your db environment (user and pass db)
+5. Run migration with `php artisan migrate`
+6. Seed the db with `php artisan db:seed` (seed the user, product, product type tables) 
 7. Run the server: `php -S localhost:8080 -t public`
 8. Use POSTMAN to test. Here's postman collection link: `https://www.getpostman.com/collections/3574c9d0a7bee3523f5c`
 or you can use `Online Store EVERMOS.postman_collection.json` file on root project directory.
 9. I provide the environment for test on `EVERMOS Environment.postman_environment.json` file. Import this file to postman environment.
-10. If you encounter any problems, you could try to clear cache and clear config.
+10. Almost all route need auth/token, so the first things you have to do is login. You can see list user on `{{host}}/list-users` to get email and copy the provided token to postman environment on the token key.
+11. If you encounter any problems, you could try to clear cache and clear config.
+12. If you encounter any error on jwt, generate jwt secret key with `php artisan jwt:secret`
 
-
+# The business process
+1. User Login on `{{host}}/auth/login` (for user email you could see on `{{host}}/list-users` and all password is `123456`)
+2. User see product list on `{{host}}/list-products`
+3. User add product to basket (can 1 product by default or you can defined the quantity)
+4. User see the list of product on baskket (products that have been added to basket)
+5. User do the checkout
+6. User process the payment
+7. Send the package
+8. Received the package
+9. Complete the transaction
+misc: you can see list of all transactions by status (waiting payment, paid, sent, received, completed)
