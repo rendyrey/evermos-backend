@@ -6,6 +6,23 @@
 	},
 	"item": [
 		{
+			"name": "Get List of Users",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{host}}/list-users",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"list-users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
 			"name": "Auth/Login",
 			"request": {
 				"method": "POST",
@@ -15,7 +32,7 @@
 					"formdata": [
 						{
 							"key": "email",
-							"value": "kayleigh72@example.org",
+							"value": "erdman.llewellyn@example.org",
 							"type": "text"
 						},
 						{
@@ -51,29 +68,6 @@
 					"port": "8080",
 					"path": [
 						"list-products"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Get List of  Basket",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "{{host}}/list-basket?token={{token}}",
-					"host": [
-						"{{host}}"
-					],
-					"path": [
-						"list-basket"
-					],
-					"query": [
-						{
-							"key": "token",
-							"value": "{{token}}"
-						}
 					]
 				}
 			},
@@ -129,6 +123,29 @@
 			"response": []
 		},
 		{
+			"name": "Get List of  Basket",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{host}}/list-basket?token={{token}}",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"list-basket"
+					],
+					"query": [
+						{
+							"key": "token",
+							"value": "{{token}}"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
 			"name": "Checkout",
 			"request": {
 				"method": "POST",
@@ -152,19 +169,30 @@
 			"response": []
 		},
 		{
+			"name": "Get List of Payment Method",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": ""
+				}
+			},
+			"response": []
+		},
+		{
 			"name": "Process Payment",
 			"request": {
 				"method": "POST",
 				"header": [],
 				"url": {
-					"raw": "{{host}}/pay/{{transactionId}}/1?token={{token}}",
+					"raw": "{{host}}/pay/{{transactionId}}/{{[paymentId}}?token={{token}}",
 					"host": [
 						"{{host}}"
 					],
 					"path": [
 						"pay",
 						"{{transactionId}}",
-						"1"
+						"{{[paymentId}}"
 					],
 					"query": [
 						{
